@@ -1,29 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum de Tomas Del Pino</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículum de Tomás Del Pino</title>
+  <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
-    <h1>Tomas Del Pino</h1>
-    <p>Desarrollador backend especializado en Laravel; disfruto crear APIs RESTful robustas, optimizar bases de datos MySQL y llevar las mejores prácticas de PHP a soluciones escalables.</p>
-    <div>
-        <h2>Estudios</h2>
-    <ul>
-        <li>Secundario completo con Título de Técnico Provincial en Electrónica – IPET N.º 55 (2013)</li>
-        <li>Técnicatura Superior en Desarrollo de Software – Instituto Superior Villa del Rosario (ISVDR) – 2023‑presente</li>
-    </ul>
-    <h2>Experiencia Laboral</h2>
-    <div>
-        <ul>
-            <li>Área de Modernización – Municipalidad de Villa del Rosario (2024‑presente)  
-                <br><em>Desarrollo e implementación de proyectos web internos para optimizar procesos municipales.</em>
-            </li>
-            <li>Proyectos personales de software (continuo)  
-                <br><em>APIs RESTful con Laravel 10/11, frontend con Next.js y React, prácticas DevOps con Docker.</em>
-            </li>
-        </ul>
-    </div>
+  <div class="topbar">
+    <button id="toggleTheme">🌙/☀️</button>
+    <button id="printCV">🖨️ Imprimir</button>
+  </div>
+
+  <main class="wrap">
+    <article class="resume">
+      <!-- Header -->
+      <header class="hero">
+        <div class="title">
+          <h1 class="name">Tomás Del Pino</h1>
+          <span class="tag">Desarrollador Backend</span>
+        </div>
+        <p class="summary">
+          Desarrollador backend especializado en Laravel y PHP, con experiencia en creación de APIs seguras,
+          bases de datos optimizadas y despliegue en Docker. Aplico buenas prácticas y metodologías ágiles
+          para desarrollar soluciones escalables y eficientes.
+        </p>
+      </header>
+
+      <!-- Cuerpo en dos columnas -->
+      <section class="grid">
+        <!-- ===== Columna Izquierda ===== -->
+        <div class="col">
+          <h2 class="h2">Contacto</h2>
+          <div class="card">
+            <p><strong>📞</strong> +54 9 3573 400262</p>
+            <p><strong>💼</strong> <a href="https://www.linkedin.com/in/tomas-del-pino-0234932a7/" target="_blank">LinkedIn</a></p>
+            <p><strong>🌍</strong> Villa del Rosario, Córdoba, Argentina</p>
+            <p><strong>💻</strong> <a href="https://github.com/tomydp" target="_blank" rel="noopener">github.com/tomydp</a></p>
+          </div>
+
+          <h2 class="h2">Educación</h2>
+          <div class="card item">
+            <div class="item-title">
+              <div>
+                <div class="role">Técnico Provincial en Electrónica</div>
+                <div class="place">Instituto Provincial de Educación Técnica N°55</div>
+              </div>
+              <div class="when">2008 – 2013</div>
+            </div>
+          </div>
+
+          <div class="card item">
+            <div class="item-title">
+              <div>
+                <div class="role">Tecnicatura Superior en Desarrollo de Software</div>
+                <div class="place">Instituto Superior Villa del Rosario (ISVDR)</div>
+              </div>
+              <div class="when">2023 – Actualidad</div>
+            </div>
+          </div>
+
+          <h2 class="h2">Certificaciones</h2>
+          <div class="card">
+            <ul class="list">
+              <li><strong>Desarrollo Web Completo</strong> – Udemy (Juan Pablo De la Torre Valdez) <br><span class="em">Finalización: 27/03/2024</span></li>
+              <li><strong>Laravel 9 - Crea Aplicaciones y Sitios Web</strong> – Udemy (Juan Pablo De la Torre Valdez) <br><span class="em">Finalización: 01/12/2024</span></li>
+            </ul>
+          </div>
+
+          <h2 class="h2">Habilidades</h2>
+          <div class="card">
+            <div class="h2" style="margin:0 0 6px">Técnicas</div>
+            <div class="chips">
+              <span class="chip">HTML / CSS / SASS / Tailwind</span>
+              <span class="chip">PHP</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Visual Basic</span>
+              <span class="chip">MySQL / SQL Server</span>
+              <span class="chip">Laravel / Livewire</span>
+              <span class="chip">Next.js</span>
+              <span class="chip">.NET</span>
+              <span class="chip">Docker</span>
+            </div>
+            <div class="h2" style="margin:14px 0 6px">Blandas</div>
+            <div class="chips">
+              <span class="chip">Comunicación efectiva</span>
+              <span class="chip">Resolución de problemas</span>
+              <span class="chip">Trabajo colaborativo</span>
+              <span class="chip">Adaptabilidad</span>
+              <span class="chip">Escucha activa</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Columna Derecha ===== -->
+        <div class="col">
+          <h2 class="h2">Experiencia</h2>
+
+          <div class="card">
+            <p>
+              <strong>Desarrollador y Técnico en Sistemas - Municipalidad de Villa del Rosario</strong><br>
+              <em>2024 - Actualidad</em>
+            </p>
+            <ul class="list">
+              <li>Desarrollo de sistemas de gestión con Laravel 11 y MySQL.</li>
+              <li>Configuración e instalación de Sistema de Gestión Interno, elaborado en FoxPro.</li>
+              <li>Mantenimiento y reparación de PC, instalación de software y configuración de hardware.</li>
+              <li>Instalación y configuración de relojes biométricos para control de asistencia.</li>
+              <li>Configuración y mantenimiento de redes locales.</li>
+            </ul>
+          </div>
+
+          <h2 class="h2">Proyectos Relevantes</h2>
+
+          <div class="card item">
+            <div class="item-title">
+              <div class="role">Sistema de Gestión para Concejo Deliberante</div>
+            </div>
+            <p class="em">
+              Backend en Laravel 11 con Livewire y MySQL. Incluye módulos de ordenanzas y anexos,
+              control de roles con Spatie, Breeze para autenticación y manejo optimizado de archivos y consultas.
+            </p>
+          </div>
+
+          <div class="card item">
+            <div class="item-title">
+              <div class="role">Finance-Game – Plataforma de Gamificación Financiera</div>
+            </div>
+            <p class="em">
+              API backend en Laravel 12 con Breeze y Sanctum, autenticación con cookies, endpoints para
+              cursos, lecciones y ejercicios, integrado con frontend en React y Tailwind.
+            </p>
+          </div>
+
+          <div class="card item">
+            <div class="item-title">
+              <div class="role">Sistema de Gestión de Proyectos y Tareas – Municipalidad</div>
+            </div>
+            <p class="em">
+              Backend en Laravel 11 con Livewire y MySQL. Creación, asignación y seguimiento de proyectos y tareas,
+              con gestión de archivos, responsables y notificaciones.
+            </p>
+          </div>
+
+          <div class="card item">
+            <div class="item-title">
+              <div class="role">Turnero Web Escalable</div>
+            </div>
+            <p class="em">
+              Next.js con backend desacoplado. Gestión de turnos, servicios y disponibilidad. Arquitectura modular.
+            </p>
+          </div>
+
+          <div class="card item">
+            <div class="item-title">
+              <div class="role">Sistema de Gestión para Fábrica de Pastas</div>
+            </div>
+            <p class="em">
+              ASP.NET Web Forms con VB.NET y SQL Server (tres capas). Ventas, compras, insumos, proveedores,
+              estadísticas y stock. Procedimientos almacenados para optimizar rendimiento.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="foot">
+        <span>Actualizado: 2025</span>
+      </footer>
+    </article>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

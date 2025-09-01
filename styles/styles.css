@@ -2,7 +2,7 @@
   --bg:#0f1115;
   --card:#151922;
   --ink:#e9ecf1;
-  --muted:#b7c0cd;
+  --muted:#666;
   --accent:#7aa2ff;
   --border:#222838;
   --shadow:0 8px 24px rgba(0,0,0,.28);
@@ -23,9 +23,27 @@ body{
 .name{font-size:clamp(28px,4vw,38px);margin:0;}
 .tag{font:600 12px/1 var(--mono);color:var(--accent);background:rgba(122,162,255,.12);border:1px solid rgba(122,162,255,.25);padding:6px 10px;border-radius:999px;}
 .summary{color:var(--muted);}
+
+/* ===== GRID ===== */
 .grid{display:grid;grid-template-columns:1fr;gap:8px;}
-@media(min-width:860px){.grid{grid-template-columns:1.1fr 1fr;}.col{padding:22px 24px 28px;}.col+ .col{border-left:1px solid var(--border);}}
-@media(max-width:859px){.col{padding:14px 18px;}.col+ .col{border-top:1px solid var(--border);}}
+/* Desktop */
+@media(min-width:860px){
+  .grid{grid-template-columns:1.1fr 1fr;}
+  .col{padding:22px 24px 28px;}
+  .col+ .col{border-left:1px solid var(--border);}
+  /* contacto a todo el ancho abajo */
+  .contacto{grid-column:1 / -1; padding:22px 24px 0;}
+}
+/* Mobile */
+@media(max-width:859px){
+  .col{padding:14px 18px;}
+  .col+ .col{border-top:1px solid var(--border);}
+  /* orden explícito: col izquierda (1), col derecha (2), contacto (3) */
+  .grid > .col:nth-of-type(1){order:1;}
+  .grid > .col:nth-of-type(2){order:2;}
+  .grid > .contacto{order:3; padding:14px 18px 0;}
+}
+
 .h2{margin:0 0 12px;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
 .card{background:#1d2330;border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:12px;}
 .item{display:grid;gap:6px;margin-bottom:14px;}
@@ -86,4 +104,3 @@ body.light .chip{background:#eee;color:#222;}
 /* Animación */
 .resume{opacity:0; transform:translateY(20px); transition:all .6s ease;}
 .resume.show{opacity:1; transform:translateY(0);}
-

@@ -1,62 +1,117 @@
 :root{
+  /* Tema oscuro (por defecto) */
   --bg:#0f1115;
   --card:#151922;
-  --ink:#e9ecf1;
-  --muted:#666;
+  --ink:#e9ecf1;        /* texto principal */
+  --muted:#cfd6e0;      /* texto secundario en dark (más claro para buen contraste) */
   --accent:#7aa2ff;
   --border:#222838;
   --shadow:0 8px 24px rgba(0,0,0,.28);
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
   background:linear-gradient(180deg, #0e0f14, var(--bg));
   color:var(--ink);
   font: 15px/1.6 var(--font);
 }
+
 .wrap{max-width:980px; margin:40px auto; padding:0 20px;}
-.resume{background:var(--card); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow); overflow:hidden;}
+
+.resume{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+/* Header */
 .hero{padding:28px; border-bottom:1px solid var(--border);}
 .title{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
 .name{font-size:clamp(28px,4vw,38px);margin:0;}
-.tag{font:600 12px/1 var(--mono);color:var(--accent);background:rgba(122,162,255,.12);border:1px solid rgba(122,162,255,.25);padding:6px 10px;border-radius:999px;}
+.tag{
+  font:600 12px/1 var(--mono);
+  color:var(--accent);
+  background:rgba(122,162,255,.12);
+  border:1px solid rgba(122,162,255,.25);
+  padding:6px 10px;border-radius:999px;
+}
 .summary{color:var(--muted);}
 
 /* ===== GRID ===== */
 .grid{display:grid;grid-template-columns:1fr;gap:8px;}
+
 /* Desktop */
 @media(min-width:860px){
   .grid{grid-template-columns:1.1fr 1fr;}
   .col{padding:22px 24px 28px;}
   .col+ .col{border-left:1px solid var(--border);}
-  /* contacto a todo el ancho abajo */
+  /* Contacto a todo el ancho abajo */
   .contacto{grid-column:1 / -1; padding:22px 24px 0;}
 }
+
 /* Mobile */
 @media(max-width:859px){
   .col{padding:14px 18px;}
   .col+ .col{border-top:1px solid var(--border);}
-  /* orden explícito: col izquierda (1), col derecha (2), contacto (3) */
+  /* Orden explícito: izq (1), der (2), contacto (3) */
   .grid > .col:nth-of-type(1){order:1;}
   .grid > .col:nth-of-type(2){order:2;}
   .grid > .contacto{order:3; padding:14px 18px 0;}
 }
 
-.h2{margin:0 0 12px;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
-.card{background:#1d2330;border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:12px;}
+/* Contenido */
+.h2{
+  margin:0 0 12px;
+  font-size:15px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);           /* usa el secundario */
+}
+
+.card{
+  background:#1d2330;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+
 .item{display:grid;gap:6px;margin-bottom:14px;}
 .item-title{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .role{font-weight:700;}
 .when{font:600 12px/1 var(--mono);color:var(--muted);}
 .place{color:var(--muted);font-weight:500;}
 .em{color:var(--muted);font-style:italic;}
+
 .list{margin:0;padding-left:18px;}
 .list li{margin:8px 0;}
+
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
-.chip{background:#0f1420;border:1px solid var(--border);color:var(--ink);font:600 12px/1 var(--mono);border-radius:999px;padding:6px 10px;}
-.foot{border-top:1px solid var(--border);padding:14px 20px;color:var(--muted);font:12px/1.6 var(--mono);display:flex;justify-content:space-between;}
+.chip{
+  background:#0f1420;
+  border:1px solid var(--border);
+  color:var(--ink);
+  font:600 12px/1 var(--mono);
+  border-radius:999px;
+  padding:6px 10px;
+}
+
+/* Footer */
+.foot{
+  border-top:1px solid var(--border);
+  padding:14px 20px;
+  color:var(--muted);
+  font:12px/1.6 var(--mono);
+  display:flex;justify-content:space-between;
+}
+
+/* Impresión */
 @media print{
   body{background:#fff;color:#111;}
   .resume{box-shadow:none;border-color:#ddd;}
@@ -66,7 +121,7 @@ body{
   :root{--ink:#111;--muted:#444;--card:#fff;}
 }
 
-/* Botones */
+/* Botones topbar */
 .topbar{
   display:flex;
   justify-content:flex-end;
@@ -89,6 +144,7 @@ body{
 body.light{
   background:#f4f4f4;
   color:#111;
+  --muted:#555;               /* más oscuro en light para mejorar legibilidad */
 }
 body.light .resume{
   background:#fff;
@@ -98,8 +154,7 @@ body.light .card{
   background:#f9f9f9;
   border-color:#ddd;
 }
-body.light .h2{color:#333;}
-body.light .chip{background:#eee;color:#222;}
+/* No necesitamos overrides adicionales: todo usa --muted */
 
 /* Animación */
 .resume{opacity:0; transform:translateY(20px); transition:all .6s ease;}
